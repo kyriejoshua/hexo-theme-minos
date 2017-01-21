@@ -1,10 +1,12 @@
 $code-block
   margin: 0
   font-size: 14px
-  background: #23241f
+  background: #f7f7f7
   padding: 15px 0
   overflow: auto
-  color: #fff
+  color: #4b4b4c
+  box-shadow: 0 2px 4px #ddd
+  border-radius: 2px
   line-height: font-size * line-height
 
 $line-numbers
@@ -19,6 +21,7 @@ $line-numbers
     padding: 0 0.3em
   pre
     @extend $code-block
+    box-shadow: 0 8px 10px #ddd
     padding: 20px
     code
       background: none
@@ -88,13 +91,17 @@ $line-numbers
 pre
   // Theme: monokai_sublime
   // More theme here: http://softwaremaniacs.org/media/soft/highlight/test.html.hljs,
-  .tag,
+  // .tag,
   .css .rules,
   .css .value,
   .css .function
   .preprocessor,
   .pragma
     color: #f8f8f2;
+  .tag
+    color: #e35348;
+  .attr
+    color: #607d8b;
 
   .strongemphasis,
   .strong,
@@ -158,9 +165,9 @@ pre
   .variable,
   .params,
   .class .title
-    color: #f8f8f2;
+    color: #f5871f;
 
-  .string,
+  // .string,
   .css .id,
   .subst,
   .type,
@@ -184,6 +191,9 @@ pre
   .link_label,
   .link_url
     color: #e6db74;
+
+  .string
+    color: #fac863;
 
   .comment,
   .javadoc,

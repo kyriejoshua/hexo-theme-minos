@@ -4,3 +4,7 @@ nav:
 article:
   comments: 'Comments'
   contents: 'Contents'
+post:
+  sticky: Sticky
+  posted: Posted on
+  visitors: Views
