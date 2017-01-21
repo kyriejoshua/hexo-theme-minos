@@ -44,15 +44,17 @@
   <% } %>
   <script>
     var img = document.body.querySelector('img[title="Thanks"]');
-    var reward = document.body.querySelector('.page-reward-btn');
-    img.style.display = 'none';
-    reward.addEventListener('click', function() {
-      if (img.style.display === 'none' || img.style.display === '') {
-        img.style.display = 'block';
-      } else {
-        img.style.display = 'none';
-      }
-    })
+    if (img && img.style) {
+      var reward = document.body.querySelector('.page-reward-btn');
+      img.style.display = 'none';
+      reward.addEventListener('click', function() {
+        if (img.style.display === 'none' || img.style.display === '') {
+          img.style.display = 'block';
+        } else {
+          img.style.display = 'none';
+        }
+      })
+    }
   </script>
 </article>
 
