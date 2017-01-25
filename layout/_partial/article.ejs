@@ -46,13 +46,19 @@
     var img = document.body.querySelector('img[title="Thanks"]');
     if (img && img.style) {
       var reward = document.body.querySelector('.page-reward-btn');
+      var className = img.getAttribute('class');
+      // className = '';
+      // className += 'pay-hide';
+      // img.setAttribute('class', className)
       img.style.display = 'none';
+      img.style.width = '200px';
       reward.addEventListener('click', function() {
-        if (img.style.display === 'none' || img.style.display === '') {
-          img.style.display = 'block';
+        if (img.style.display === 'none' || className === 'pay-hide') {
+          $('img[title="Thanks"]').fadeIn('slow');
         } else {
-          img.style.display = 'none';
+          $('img[title="Thanks"]').fadeOut();
         }
+        // img.setAttribute('class', className);
       })
     }
   </script>
