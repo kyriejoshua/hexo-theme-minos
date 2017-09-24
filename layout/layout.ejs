@@ -5,6 +5,14 @@
     <section id="main" class="outer"><%- body %></section>
     <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
     <%- partial('_partial/after-footer') %>
+    <%- partial('_partial/dice') %>
   </div>
+  <script type="text/javascript">
+    // 🎲
+    var dice = document.body.querySelector('#dice')
+    dice.addEventListener('click', function() {
+      dice.style && (dice.style.display = 'none')
+    });
+  </script>
 </body>
 </html>
