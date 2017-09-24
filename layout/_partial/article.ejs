@@ -25,6 +25,10 @@
         <% } %>
       <% } else { %>
         <%- post.content %>
+        <!-- 引入打赏图片即显示打赏功能 -->
+        <% if (post.content.indexOf('reward.jpeg') !== -1) {%>
+          <%- partial('reward') %>
+        <% } %>
       <% } %>
     </div>
     <% if (!index && theme.toc && toc(post.content)) { %>
@@ -33,8 +37,6 @@
         <%- toc(post.content) %>
       </div>
     <% } %>
-    <!-- TODO: 日后留作打赏用 -->
-    <!-- <%- partial('reward') %> -->
     <% if (!index || post.tags.length){ %>
       <footer class="article-footer">
         <%- partial('post/tag') %>
@@ -48,14 +50,15 @@
     var img = document.body.querySelector('img[title="Thanks"]');
     if (img && img.style) {
       var reward = document.body.querySelector('.page-reward-btn');
+      img.className += ' reward-qrcode';
       var className = img.getAttribute('class');
       img.style.display = 'none';
       img.style.width = '200px';
       reward.addEventListener('click', function() {
         if (img.style.display === 'none' || className === 'pay-hide') {
-          $('img[title="Thanks"]').fadeIn('slow');
+          $('img.reward-qrcode').fadeIn('slow');
         } else {
-          $('img[title="Thanks"]').fadeOut();
+          $('img.reward-qrcode').fadeOut();
         }
       })
     }
