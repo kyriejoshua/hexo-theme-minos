@@ -1,10 +1,30 @@
+name: 'English'
+common:
+  archives: 'Archives'
+  category: 'Category'
+  tag: 'Tag'
+  categories: 'Categories'
+  tags: 'Tags'
 nav:
   next: 'Next'
   prev: 'Prev'
 article:
+  read_more: 'Read More'
+  read: 'read'
+  about: 'About'
+  words: 'words'
   comments: 'Comments'
   contents: 'Contents'
 post:
   sticky: Sticky
   posted: Posted on
   visitors: Views
+search:
+  hint: 'Type something...'
+insight:
+  hint: 'Type something...'
+  posts: 'Posts'
+  pages: 'Pages'
+  categories: 'Categories'
+  tags: 'Tags'
+  untitled: '(Untitled)'
