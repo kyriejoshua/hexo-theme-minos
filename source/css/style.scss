@@ -89,6 +89,14 @@ a.tag.article-tag {
                 right: 100%;
             }
         }
+
+        hr {
+            &:first-child {
+                margin: -0.5rem 0 1rem 0;
+                background-color: transparent;
+                border: 1px dashed #ddd;
+            }
+        }
     }
 
     .article-more-link a {
