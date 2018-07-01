@@ -34,6 +34,10 @@
         </p>
     <% } else { %>
         <%- post.content %>
+        <!-- 引入打赏图片即显示打赏功能 -->
+        <% if (post.content.indexOf('reward.jpeg') !== -1) {%>
+            <%- partial('reward') %>
+        <% } %>
     <% } %>
     </div>
     <% if (!index && post.tags && post.tags.length){ %>
@@ -57,6 +61,24 @@
         </span>
     </div>
     <% } %>
+    <script>
+    // 打赏相关逻辑
+    var img = document.body.querySelector('img[title="Thanks"]');
+    if (img && img.style) {
+        var reward = document.body.querySelector('.page-reward-btn');
+        img.className += ' reward-qrcode';
+        var className = img.getAttribute('class');
+        img.style.display = 'none';
+        img.style.width = '200px';
+        reward.addEventListener('click', function () {
+            if (img.style.display === 'none' || className === 'pay-hide') {
+                $('img.reward-qrcode').fadeIn('slow');
+            } else {
+                $('img.reward-qrcode').fadeOut();
+            }
+        })
+    }
+    </script>
 </article>
 
 <% if (!index && has_config('share.type')) { %>

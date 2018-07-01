@@ -36,6 +36,7 @@ a.tag.article-tag {
 
     .navbar-item {
         text-align: center;
+        padding: .5rem 1.5rem; // 优化
     }
 
     a.navbar-item.is-active {
@@ -163,6 +164,10 @@ a.tag.article-tag {
     }
 
     blockquote {
+        padding: 0 1.5rem; // 优化
+        p {
+            padding: 1.2rem 0;
+        }
         &.colorquote {
             position: relative;
 
@@ -590,6 +595,9 @@ figure.highlight {
     padding: 0;
     line-height: 0;
     max-width: 100%;
+    // 不知为何打赏图片不居中，这里强行加上
+    left: 50%;
+    transform: translateX(-50%);
 
     &:hover {
         .caption {
@@ -616,3 +624,6 @@ figure.highlight {
 }
 
 @import "insight";
+@import "dice";
+@import "douban";
+@import "reward";
