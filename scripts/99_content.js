@@ -165,9 +165,9 @@ hexo.extend.helper.register('toc_list', (content) => {
 
 function patchCodeHighlight(content) {
     const $ = cheerio.load(content, { decodeEntities: false });
-    // 小改动暂未发现影响 改动前 hljs class 无效
-    $('figure.javascript').addClass('hljs');
-    $('figure.javascript .code .line span').each(function () {
+    $("figure.highlight").toString();
+    $("figure.highlight").addClass("hljs");
+    $('figure.highlight .code .line span').each(function () {
         const classes = $(this).attr('class').split(' ');
         if (classes.length === 1) {
             $(this).addClass('hljs-' + classes[0]);
@@ -177,6 +177,7 @@ function patchCodeHighlight(content) {
     return $.html();
 }
 
+let aaaaa = 0
 /**
  * Add .hljs class name to the code blocks and code elements
  */
